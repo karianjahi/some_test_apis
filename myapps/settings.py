@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
+import dj_database_url
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -86,13 +87,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'epl',
-        'USER': 'njeri',
-        'PASSWORD': 'MsaKuRu?**5890',
-        'HOST': 'localhost',
-        'PORT': '',
+        'USER': 'epl_user',
+        'PASSWORD': 'LtPH2KGRrT0oQaxQ33lHEog6RXFi21zI',
+        'HOST': 'dpg-clcjm7rmot1c73dh0700-a',
+        'PORT': '5432',
     }
 }
-
+DATABASES["default"] = dj_database_url.parse("postgres://epl_user:LtPH2KGRrT0oQaxQ33lHEog6RXFi21zI@dpg-clcjm7rmot1c73dh0700-a.frankfurt-postgres.render.com/epl")
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
